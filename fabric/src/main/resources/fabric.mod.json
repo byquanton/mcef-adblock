@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "mcef_adblock",
+  "version": "${version}",
+  "name": "MCEF AdBlock",
+  "description": "",
+  "authors": [
+    ""
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "eu.byquanton.mods.mcefadblock.fabric.McefAdblockFabric"
+    ],
+    "client": [
+      "eu.byquanton.mods.mcefadblock.fabric.client.McefAdblockFabricClient"
+    ]
+  },
+  "mixins": [
+    "mcef-adblock.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "~1.21.10",
+    "mcef": "",
+    "java": ">=21"
+  },
+  "suggests": {
+    "mc-browser": "*"
+  }
+}
