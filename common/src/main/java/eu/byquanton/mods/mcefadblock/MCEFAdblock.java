@@ -15,7 +15,24 @@ public final class MCEFAdblock {
 
     private static final List<String> ruleLists = new ArrayList<>(List.of(
             "https://easylist.to/easylist/easylist.txt",
-            "https://easylist.to/easylist/easyprivacy.txt"
+            "https://easylist.to/easylist/easyprivacy.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2020.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2021.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2022.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2023.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2024.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2025.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-general.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/ubo-link-shorteners.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt",
+            "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-others.txt",
+            "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
     ));
 
     private static final List<String> rules = new ArrayList<>();
@@ -58,6 +75,7 @@ public final class MCEFAdblock {
                 System.err.println("Failed to fetch rules from " + urlString + ": " + e.getMessage());
             }
         }
+        System.out.println("Loaded " + rules.size() + " rules from " + ruleLists.size() + " rules lists.");
     }
 
     public static void init() {

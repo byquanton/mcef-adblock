@@ -14,7 +14,6 @@ public class AdBlockResourceHandlerAdapter extends CefRequestHandlerAdapter {
     public CefResourceRequestHandler getResourceRequestHandler(CefBrowser browser, CefFrame frame, CefRequest request, boolean isNavigation, boolean isDownload, String requestInitiator, BoolRef disableDefaultHandling) {
         String url = request.getURL();
         boolean isBlocked = getBlocker().checkUrls(url, url, getRequestType(request.getResourceType()));
-        System.out.println((isBlocked ? "Blocked - " : "") + url);
         if (isBlocked) {
             disableDefaultHandling.set(true);
             return new AdBlockResourceRequestHandler();
